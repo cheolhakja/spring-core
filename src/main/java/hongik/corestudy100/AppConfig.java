@@ -12,12 +12,20 @@ import hongik.corestudy100.order.OrderServiceImpl;
 
 public class AppConfig {
     public MemberService memberService(){
-        return new MemberServiceImpl(new MemoryMemberRepository());
+        return new MemberServiceImpl(memberRepository());
+    }
+
+    public MemberRepository memberRepository() {
+        return new MemoryMemberRepository();
     }
 
     public OrderService orderService(){
         return new OrderServiceImpl(
-                new MemoryMemberRepository(), new FixedDiscountPolicy());
+                memberRepository(), discountPolicy());
+    }
+
+    public DiscountPolicy discountPolicy(){
+        return new FixedDiscountPolicy();
     }
 
 }
