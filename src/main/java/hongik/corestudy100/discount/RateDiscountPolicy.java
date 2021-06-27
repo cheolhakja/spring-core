@@ -2,7 +2,9 @@ package hongik.corestudy100.discount;
 
 import hongik.corestudy100.member.Grade;
 import hongik.corestudy100.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private static int discountPercent = 10;
