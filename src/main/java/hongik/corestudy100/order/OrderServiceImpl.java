@@ -1,5 +1,6 @@
 package hongik.corestudy100.order;
 
+import hongik.corestudy100.annotation.MainDiscountPolicy;
 import hongik.corestudy100.discount.DiscountPolicy;
 import hongik.corestudy100.discount.FixedDiscountPolicy;
 import hongik.corestudy100.discount.RateDiscountPolicy;
@@ -17,7 +18,7 @@ public class OrderServiceImpl implements OrderService{
     private final DiscountPolicy discountPolicy ;
 
     @Autowired
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }

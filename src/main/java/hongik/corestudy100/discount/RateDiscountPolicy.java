@@ -1,5 +1,6 @@
 package hongik.corestudy100.discount;
 
+import hongik.corestudy100.annotation.MainDiscountPolicy;
 import hongik.corestudy100.member.Grade;
 import hongik.corestudy100.member.Member;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -7,7 +8,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
+@MainDiscountPolicy
 public class RateDiscountPolicy implements DiscountPolicy{
 
     private static int discountPercent = 10;
